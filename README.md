@@ -74,30 +74,38 @@ kl = sum(p * log(p / q) for p, q in zip(baseline_prob, q_prob))
 
 ## Dashboard Features
 ### Page 1 — User Prediction (Data Generator)
-Component	Description
-Input Form	Biometric fields: Age, Height, Weight, Duration, Heart Rate, Body Temp, Gender
-Quick Stats	Live BMI calculator, MHR estimate, HR zone percentage
-Prediction Result	Calorie output with burn rate and intensity classification
-SQLite Logging	Transformed raw inputs + prediction automatically written to `user_logs`
+
+| Component | Description |
+|---|---|
+| Input Form | Biometric fields: Age, Height, Weight, Duration, Heart Rate, Body Temp, Gender |
+| Quick Stats | Live BMI calculator, MHR estimate, HR zone percentage |
+| Prediction Result | Calorie output with burn rate and intensity classification |
+| SQLite Logging | Transformed raw inputs + prediction automatically written to `user_logs`|
 
 ### Page 2 — MLOps Dashboard (Drift Monitoring)
-Component	Description
-Summary Metrics	Total logs, avg KL score, most-drifted feature, system health
-Drift Cards	Per-feature KL score with color-coded badge (Green/Yellow/Red)
-KL Bar Chart	Comparative bar chart with warning/critical threshold lines
-Distribution Overlay	Histogram overlay: Baseline (P) vs Live (Q) for all 6 features
-Prediction Trend	Time-series line chart of last 50 predictions
-Live Log Table	Last 10 rows ingested into SQLite
+
+| Component | Description |
+|---|---|
+| Summary Metrics | Total logs, avg KL score, most-drifted feature, system health |
+| Drift Cards | Per-feature KL score with color-coded badge (Green/Yellow/Red) |
+| KL Bar Chart | Comparative bar chart with warning/critical threshold lines |
+| Distribution Overlay | Histogram overlay: Baseline (P) vs Live (Q) for all 6 features |
+| Prediction Trend | Time-series line chart of last 50 predictions |
+| Live Log Table | Last 10 rows ingested into SQLite |
+
 
 ## Model Background
 For this project, the model was trained using data from [Kaggle](https://www.kaggle.com/datasets/ruchikakumbhar/calories-burnt-prediction).
 While the primary focus is on the MLOps layer, the underlying XGBoost model demonstrates strong performance:
-Model	RMSE	MAE
-Linear Regression	0.101	0.079
-Random Forest	0.043	0.030
-SVR	0.046	0.035
-XGBoost	0.031	0.024
-Gradient Boosting	0.046	0.034
+
+| Model | RMSE | MAE |
+|---|---|---|
+| Linear Regression | 0.101 | 0.079 |
+| Random Forest | 0.043 | 0.030 |
+| SVR | 0.046 | 0.035 |
+| **XGBoost** | **0.031** | **0.024** |
+| Gradient Boosting | 0.046 | 0.034 |
+
 XGBoost was selected for deployment due to its lowest error across both metrics. All numeric features were Box-Cox transformed via `PowerTransformer` prior to training; Gender was label-encoded.
 
 ## Project Structure
@@ -117,12 +125,12 @@ MLOps_Data_Drift_Monitoring_for_Calorie_Prediction/
 ```
 
 ## Technical Stack
-Layer	Technology
-Model	XGBoost Regressor
-Preprocessing	PowerTransformer (Box-Cox), LabelEncoder, StandardScaler
-Drift Metric	KL Divergence
-Database	SQLite (real-time logging)
-Frontend	Streamlit (multi-page)
-Visualization	Plotly (interactive charts)
-Deployment	HuggingFace Spaces
-
+| Layer | Technology |
+|---|---|
+| **Model** | XGBoost Regressor |
+| **Preprocessing** | PowerTransformer (Box-Cox), LabelEncoder, StandardScaler |
+| **Drift Metric** | KL Divergence |
+| **Database** | SQLite (real-time logging) |
+| **Frontend** | Streamlit (multi-page) |
+| **Visualization** | Plotly (interactive charts) |
+| **Deployment** | HuggingFace Spaces |
