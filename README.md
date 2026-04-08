@@ -8,8 +8,9 @@ This system catches that degradation before it becomes a problem, by:
 - Transforming live data to match the training scale (Box-Cox via `PowerTransformer`)
 - Computing KL Divergence between the live and baseline distributions for all features
 - Surfacing drift signals through a visual, color-coded Streamlit dashboard
-Live Demo Experience the chatbot in action [Here](https://viewww-mlops-calorie-prediction-dashboard.hf.space)
- Repository: View on [Hugging Face](https://huggingface.co/spaces/Viewww/MLOps_Calorie_Prediction_Dashboard/tree/main)
+
+Live Demo: [Click Here](https://viewww-mlops-calorie-prediction-dashboard.hf.space)
+Repository: View on [Hugging Face](https://huggingface.co/spaces/Viewww/MLOps_Calorie_Prediction_Dashboard/tree/main)
 
 ## System Architecture
 
