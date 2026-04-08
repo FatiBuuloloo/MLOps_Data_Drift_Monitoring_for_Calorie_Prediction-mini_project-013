@@ -40,6 +40,7 @@ Live Demo Experience the chatbot in action [Here](https://viewww-mlops-calorie-p
             │ • xgb_model.pkl (XGBoost Regressor)                 │
             │ • baseline_distribution.pkl (PT, Scaler, LE, Bins)  │
             └─────────────────────────────────────────────────────┘
+```
 
 ## MLOps Core: Drift Detection
 ### Why KL Divergence?
