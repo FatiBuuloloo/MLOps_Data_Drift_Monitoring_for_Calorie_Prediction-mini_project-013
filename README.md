@@ -10,6 +10,7 @@ This system catches that degradation before it becomes a problem, by:
 - Surfacing drift signals through a visual, color-coded Streamlit dashboard
 
 Live Demo: [Click Here](https://viewww-mlops-calorie-prediction-dashboard.hf.space)
+
 Repository: View on [Hugging Face](https://huggingface.co/spaces/Viewww/MLOps_Calorie_Prediction_Dashboard/tree/main)
 
 ## System Architecture
